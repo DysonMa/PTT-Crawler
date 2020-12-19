@@ -128,27 +128,33 @@ import ptt package
 from ptt.crawler import * 
 from ptt.schedule import *
 ```
+set website 
+```
+website = get_index('civil')
+print(get_weburl(website))
+```
+https://www.ptt.cc//bbs/civil/index.html
 
 Crawl the PTT website by **Page**
 ```
 df = CrawlingByPage(website, page=2)
 ```
 
-![page]("./image/page.PNG")
-![page df]("./image/page_df.PNG")
+![page](/image/page.PNG)
+![page df](/image/page_df.PNG)
 
 Crawl the PTT website by **Date**
 ```
 df = CrawlingByDate(website, deadline, save=False)
 ```
-![date]("./image/date.PNG")
-![date df]("./image/date_df.PNG")
+![date](/image/date.PNG)
+![date df](/image/date_df.PNG)
 
 Crawl the PTT website by **schedule**
 ```
 schedule()
 ```
-![schedule]("./image/schedule.PNG")
+![schedule](/image/schedule.PNG)
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
