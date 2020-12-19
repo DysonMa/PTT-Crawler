@@ -134,7 +134,7 @@ Crawl the PTT website by **Page**
 df = CrawlingByPage(website, page=2)
 ```
 
-![page]("./image/page.PNG")
+![page](/image/page.PNG)
 ![page df]("https://github.com/DysonMa/PTT-Crawler/blob/master/image/page_df.PNG")
 
 Crawl the PTT website by **Date**
