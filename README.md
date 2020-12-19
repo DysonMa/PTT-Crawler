@@ -135,20 +135,20 @@ df = CrawlingByPage(website, page=2)
 ```
 
 ![page](/image/page.PNG)
-![page df]("https://github.com/DysonMa/PTT-Crawler/blob/master/image/page_df.PNG")
+![page df](/image/page_df.PNG)
 
 Crawl the PTT website by **Date**
 ```
 df = CrawlingByDate(website, deadline, save=False)
 ```
-![date]("https://github.com/DysonMa/PTT-Crawler/blob/master/image/date.PNG")
-![date df]("https://github.com/DysonMa/PTT-Crawler/blob/master/image/date_df.PNG")
+![date](/image/date.PNG)
+![date df](/image/date_df.PNG)
 
 Crawl the PTT website by **schedule**
 ```
 schedule()
 ```
-![schedule]("./image/schedule.PNG")
+![schedule](/image/schedule.PNG)
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
