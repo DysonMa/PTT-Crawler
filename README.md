@@ -128,6 +128,12 @@ import ptt package
 from ptt.crawler import * 
 from ptt.schedule import *
 ```
+set website 
+```
+website = get_index('civil')
+print(get_weburl(website))
+```
+https://www.ptt.cc//bbs/civil/index.html
 
 Crawl the PTT website by **Page**
 ```
