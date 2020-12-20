@@ -25,15 +25,15 @@
 
   <p align="center">
     Crawl the PTT website and save to sqlite database!
-    <!-- <br />
+<!--     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br /> -->
+    <br />
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
     ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a> -->
   </p>
 </p>
 
@@ -55,7 +55,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -68,8 +67,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 PTT is one of the most commonly used social media in Taiwan. 
 
 Because the amount of daily information is too much to be completely digested, we can collect data quickly through crawlers.
@@ -81,7 +78,8 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 ### Built With
 
 * [python](https://www.python.org/)
-
+* [LINE Notify](https://notify-bot.line.me/zh_TW/)
+* [SQLite](https://www.sqlite.org/download.html)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -117,18 +115,19 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-Below are examples for how to use this package:
+Below are examples:
 
 First, you should create `config.ini` with required parameters, and save it into the path as same as the `main.ipynb`.
+
+`token`: For LINE Notification service
+``
 
 import ptt package
 ```
 from ptt.crawler import * 
 from ptt.schedule import *
 ```
-set website 
+Name the website variable from the board name
 ```
 website = get_index('civil')
 print(get_weburl(website))
@@ -139,7 +138,6 @@ Crawl the PTT website by **Page**
 ```
 df = CrawlingByPage(website, page=2)
 ```
-
 ![page](/image/page.PNG)
 ![page df](/image/page_df.PNG)
 
@@ -150,21 +148,13 @@ df = CrawlingByDate(website, deadline, save=False)
 ![date](/image/date.PNG)
 ![date df](/image/date_df.PNG)
 
-Crawl the PTT website by **schedule**
+Regularly crawl the PTT website by **schedule**
 ```
 schedule()
 ```
 ![schedule](/image/schedule.PNG)
 
 _For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
-
 
 
 <!-- CONTRIBUTING -->
