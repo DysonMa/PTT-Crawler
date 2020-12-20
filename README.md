@@ -62,6 +62,8 @@ Because the amount of daily information is too much to be completely digested, w
 In addition, storing the crawled data into the database can also be used for subsequent analysis, such as machine learning, deep learning, public opinion analysis.
 
 ![date](/image/date.PNG)
+
+
 ![db](/image/db.PNG)
 
 ### Built With
