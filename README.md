@@ -24,15 +24,6 @@
 
   <p align="center">
     Crawl the PTT website and save crawled data to sqlite database!
-<!--     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a> -->
   </p>
 </p>
 
@@ -55,6 +46,7 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -63,15 +55,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About
 
-
-
 PTT is one of the most commonly used social media in Taiwan. 
 
 Because the amount of daily information is too much to be completely digested, we can collect data quickly through crawlers.
 
 In addition, storing the crawled data into the database can also be used for subsequent analysis, such as machine learning, deep learning, public opinion analysis.
 
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+![date](/image/date.PNG)
+![db](/image/db.PNG)
 
 ### Built With
 
@@ -85,7 +76,7 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 ### Installation
 
 1. Clone the repo
-   ```sh
+   ```
    git clone https://github.com/DysonMa/PTT-Crawler.git
    ```
 2. Edit `config.ini`
@@ -110,6 +101,19 @@ Below is a simple example:
 from ptt.crawler import * 
 from ptt.schedule import *
 ```
+* Check parameters
+```
+print('config_path:', config_path)
+print('deadline:', deadline)
+print('boardlist:', boardlist)
+print('updatePageNum:', updatePageNum)
+print('sqlite_path:', sqlite_path)
+```
+>config_path: config.ini<br>
+deadline: 2020-12-19 00:00:00<br>
+boardlist: ['Civil', 'Soft_Job', 'NBA']<br>
+updatePageNum: 1<br>
+sqlite_path: D:\ptt_test.db<br>
 * Name the `website` variable from specific board name
 ```
 website = get_index('civil')
@@ -128,7 +132,6 @@ df = CrawlingByPage(website, page=2)
 ```
 df = CrawlingByDate(website, deadline, save=False)
 ```
-![date](/image/date.PNG)
 ![date df](/image/date_df.PNG)
 
 * Regularly crawl the PTT website by **Schedule**
@@ -137,8 +140,7 @@ schedule()
 ```
 ![schedule](/image/schedule.PNG)
 
-Thus, the crawled data will be saved into SQLite database.
-![db](/image/db.PNG)
+
 
 <!-- LICENSE -->
 ## License
@@ -151,6 +153,12 @@ Distributed under the MIT License.
 Dyson Ma - [Gmail](madihsiang@gmail.com)
 
 Project Link: [https://github.com/DysonMa/PTT-Crawler](https://github.com/DysonMa/PTT-Crawler)
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
