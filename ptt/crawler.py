@@ -16,6 +16,7 @@ conndb = global_var.conndb
 curr = global_var.curr
 deadline = global_var.deadline
 token = global_var.token
+engine = global_var.engine
 
 # get web documents
 def _get_soup(website):
@@ -206,7 +207,7 @@ def _error_msg(e):
     return errMsg
 
 # execute crawling by page
-def CrawlingByPage(website, page):
+def CrawlingByPage(website, page, save=False, update=False):
     webName = _get_webName_from_website(website)
     df = pd.DataFrame()
     bar_page = tqdm_notebook(range(1,page+1))
@@ -231,10 +232,18 @@ def CrawlingByPage(website, page):
             print(_error_msg(e))
         website = _nextPage(doc,website)
     df = df.rename(columns=set_df_names())
+    if save:
+        df.to_sql(webName, engine, if_exists="append", index=False)
+    if (checkTableisExist(webName) and update):
+        for i in range(df.shape[0]):
+            _update_data(tuple(df.iloc[i]), webName)
+        print('更新成功')
+    elif not checkTableisExist(webName):
+        print(f'更新失敗，資料表裏頭沒有{webName}')
     return df
             
 # execute crawling by date
-def CrawlingByDate(website, deadline, save=True, update=False):
+def CrawlingByDate(website, deadline, save=False, update=False):
     webName = _get_webName_from_website(website)
     StopCrawl = global_var.StopCrawl
     df = pd.DataFrame()
@@ -265,7 +274,7 @@ def CrawlingByDate(website, deadline, save=True, update=False):
                         StopCrawl = True
                         continue
                     elif Article_date == deadline:
-                        if _checkIDisExist(webName,data[0]):
+                        if (_checkIDisExist(webName,data[0]) and update):
                             _update_data(data, webName)
                             print(f'{data[3]} 已更新!') # title
                         else:

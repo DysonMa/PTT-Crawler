@@ -1,2 +1,2 @@
-global session, deadline, token, conndb, curr, webName, StopCrawl
+global session, deadline, token, conndb, curr, webName, StopCrawl, engine
 StopCrawl = False

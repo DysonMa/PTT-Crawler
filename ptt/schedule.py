@@ -23,9 +23,7 @@ def secondCrawling(webName, deadline, website, page=1):
         website = CrawlingByDate(website, deadline, save=True, update=True)
         print(website)
         # if time meets deadline, continue crawling N page for updating old information 
-        df = CrawlingByPage(website, page)
-        for i in range(df.shape[0]):
-            _update_data(tuple(df.iloc[i]), webName)
+        df = CrawlingByPage(website, page, save=True, update=False)
         stop_time = dt.now()
         _lineNotifyMessage("爬完{}版，歷時{}".format(webName, stop_time-start_time))
     except Exception as e:

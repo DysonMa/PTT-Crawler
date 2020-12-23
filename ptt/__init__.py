@@ -5,6 +5,7 @@ from pyquery import PyQuery as pq
 from ptt import global_var
 from datetime import datetime as dt
 import sqlite3 as DB
+import sqlalchemy as sa
 
 # get the home page for webName
 def get_index(webName):
@@ -79,6 +80,7 @@ deadline = dt.strptime(config['CRAWLER']['deadline'],'%Y/%m/%d')
 token = config['NOTIFY']['token']
 [conndb,curr] = get_DB(sqlite_path)
 session = get_session()
+engine = sa.create_engine(f"sqlite:///{sqlite_path}")
 
 # make variables global if needed
 global_var.deadline = deadline
@@ -86,4 +88,5 @@ global_var.token = token
 global_var.conndb = conndb
 global_var.curr = curr
 global_var.session = session
+global_var.engine = engine
 

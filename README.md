@@ -125,14 +125,14 @@ https://www.ptt.cc//bbs/civil/index.html
 
 * Crawl the PTT website by **Page**
 ```
-df = CrawlingByPage(website, page=2)
+df = CrawlingByPage(website, page=2, save=True, update=True)
 ```
 ![page](/image/page.PNG)
 ![page df](/image/page_df.PNG)
 
 * Crawl the PTT website by **Date**
 ```
-df = CrawlingByDate(website, deadline, save=False)
+df = CrawlingByDate(website, deadline, save=True, update=True)
 ```
 ![date df](/image/date_df.PNG)
 
