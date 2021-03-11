@@ -12,6 +12,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
+[English README.md(英文版 README.md)](https://github.com/DysonMa/PTT-Crawler/blob/master/README.md)
 
 <!-- PROJECT LOGO -->
 <br />

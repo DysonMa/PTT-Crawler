@@ -12,6 +12,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
+[繁體中文 README.md(Traditional Chinese README.md)](https://github.com/DysonMa/PTT-Crawler/blob/master/README-zh-TW.md)
 
 <!-- PROJECT LOGO -->
 <br />
