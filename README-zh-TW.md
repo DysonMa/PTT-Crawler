@@ -20,55 +20,54 @@
     <img src="./image/ptt.PNG" alt="Logo" width="80" height="80">
   <!-- </a> -->
 
-  <h3 align="center">PTT Crawler</h3>
+  <h3 align="center">PTT 爬蟲</h3>
 
   <p align="center">
-    Use requests, pyquery, pandas, SQLite to build a crawler to crawl the PTT website and save crawled data to sqlite database, and connect to LINE Notifiy for notification.
+    這是一個利用requests, pyquery, pandas, SQLite爬蟲的程式，爬取 PTT 網站並將資料存入SQLite資料庫，並串接至 LINE Notify 通知服務。
   </p>
 </p>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary>Table of Contents</summary>
+  <summary>目錄</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About</a>
+      <a href="#about-the-project">關於</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#built-with">建立的環境與套件</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#getting-started">如何開始</a>
       <ul>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#installation">下載</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#usage">如何使用</a></li>
+    <li><a href="#license">憑證</a></li>
+    <li><a href="#contact">聯絡方式</a></li>
+    <li><a href="#acknowledgements">致謝</a></li>
   </ol>
 </details>
 
 
 
 <!-- ABOUT THE PROJECT -->
-## About
+## 關於
 
-PTT is one of the most commonly used social media in Taiwan. 
+PTT 是台灣最常使用到的社群(鄉民)網站之一。
 
-Because the amount of daily information is too much to be completely digested, we can collect data quickly through crawlers.
-
-In addition, storing the crawled data into the database can also be used for subsequent analysis, such as machine learning, deep learning, public opinion analysis.
+因為每天的資訊量太過龐大，難以完全的消化，所以我們可以透過爬蟲的技術來快速地蒐集資料。
+之外，將資料存入資料庫將有利於後續的分析，如: 機器學習、深度學習、大眾輿情分析...等等。
 
 ![date](/image/date.PNG)
 
 
 ![db](/image/db.PNG)
 
-### Built With
+### 建立的環境與套件
 
-* [python](https://www.python.org/)
+* [Python](https://www.python.org/)
 * [LINE Notify](https://notify-bot.line.me/zh_TW/)
 * [SQLite](https://www.sqlite.org/download.html)
 * Pandas
@@ -76,37 +75,37 @@ In addition, storing the crawled data into the database can also be used for sub
 * pyquery
 
 <!-- GETTING STARTED -->
-## Getting Started
+## 如何開始
 
-### Installation
+### 下載
 
 1. Clone the repo
    ```
    git clone https://github.com/DysonMa/PTT-Crawler.git
    ```
-2. Edit `config.ini`
+2. 編輯 `config.ini`
 
-    `boardlist`: List the board names for ptt crawling
+    `boardlist`: 輸入ptt爬蟲的版名
 
-    `deadline`: Set deadline for crawler stopping
+    `deadline`: 設定爬蟲停止的截止日期
 
-    `sqlite_path`: Path of SQLite database for storing crawled data 
+    `sqlite_path`: SQLite資料庫的存取路徑
 
     `token`: LINE Notification service token
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## 如何使用
 
-First, you should create `config.ini` with required parameters, and save it into the path as same as the `main.ipynb`.
+首先，利用前述提到的必要參數要來創建一個 `config.ini` 檔，這個檔案的路徑必須和 `main.ipynb` 相同。
 
-Below is a simple example:
+底下是一個簡單的例子:
 
-* import ptt package
+* 載入 ptt 套件
 ```
 from ptt.crawler import * 
 from ptt.schedule import *
 ```
-* Check parameters
+* 檢查參數是否正確
 ```
 print('config_path:', config_path)
 print('deadline:', deadline)
@@ -119,27 +118,27 @@ deadline: 2020-12-19 00:00:00<br>
 boardlist: ['Civil', 'Soft_Job', 'NBA']<br>
 updatePageNum: 1<br>
 sqlite_path: D:\ptt_test.db<br>
-* Name the `website` variable from specific board name
+* 依據特定的版名來命名 `website` 這個變數名稱
 ```
 website = get_index('civil')
 print(get_weburl(website))
 ```
 https://www.ptt.cc//bbs/civil/index.html
 
-* Crawl the PTT website by **Page**
+* 利用 **頁數** 來爬取PTT網站 
 ```
 df = CrawlingByPage(website, page=2, save=True, update=True)
 ```
 ![page](/image/page.PNG)
 ![page df](/image/page_df.PNG)
 
-* Crawl the PTT website by **Date**
+* 利用 **日期時間** 來爬取PTT網站
 ```
 df = CrawlingByDate(website, deadline, save=True, update=True)
 ```
 ![date df](/image/date_df.PNG)
 
-* Regularly crawl the PTT website by **Schedule**
+* 利用 **排程** 來定期爬取PTT網站
 ```
 schedule()
 ```
@@ -148,19 +147,19 @@ schedule()
 
 
 <!-- LICENSE -->
-## License
+## 憑證
 
 Distributed under the MIT License.
 
 <!-- CONTACT -->
-## Contact
+## 聯絡方式
 
 Dyson Ma - [Gmail](madihsiang@gmail.com)
 
 Project Link: [https://github.com/DysonMa/PTT-Crawler](https://github.com/DysonMa/PTT-Crawler)
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
+## 致謝
 
 * [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 
