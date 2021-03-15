@@ -146,7 +146,9 @@ schedule()
 ```
 ![schedule](/image/schedule.PNG)
 
+Line Notification
 
+![Notification](/image/line-notification.PNG)
 
 <!-- LICENSE -->
 ## License
