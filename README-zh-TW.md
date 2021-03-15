@@ -145,6 +145,9 @@ schedule()
 ```
 ![schedule](/image/schedule.PNG)
 
+Line Notification 通知服務
+
+<img src='/image/line-notification.png' width="250"></img> 
 
 
 <!-- LICENSE -->
