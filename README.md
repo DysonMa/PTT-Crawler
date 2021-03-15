@@ -148,7 +148,7 @@ schedule()
 
 Line Notification
 
-![Notification](/image/line-notification.png =100x50)
+![Notification](/image/line-notification.png =250x)
 
 <!-- LICENSE -->
 ## License
